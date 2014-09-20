@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+body {
+	color: #333;
+	background: #fcfcfc;
+	font-family: 'Open Sans';
+}
+
+a {
+	cursor: pointer;
+}
+
+header {
+	background-color: #f1c40f;
+	margin: 0;
+	padding: 2em 0;
+}
+
+header h1, header h2 {
+	text-align: center;
+}
+
+header h1 {
+	font-size: 6em;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+header h2 {
+
+}
+
+header nav {
+	position: absolute;
+	top: 0;
+	right: 2em;
+}
+
+header nav ul {
+	list-style: none;
+}
+
+header nav ul li {
+	display: inline-block;
+}
+
+header nav a {
+	padding: .25em 1em;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	transition: all .25s;
+	opacity: .7;
+}
+
+header nav a:hover {
+	border-color: #333;
+	opacity: 1;
+}
+
+header nav a:active {
+	background-color: #333;
+	color: #f1c40f;
+}
+
+.body {
+	width: 90%;
+	margin: 0 auto;
+}
+
+@media (min-width: 960px) {
+	.body {
+		width: 800px;
+	}
+}
