@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><%= @document.title %> | TEC Club - Technology, Entrepreneurship, Coding</title>
+	<%- @getBlock("meta").toHTML() %>
+	<!--[if IE]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<!-- Styles -->
+	<%- @getBlock('styles').add(@site.styles.concat(@document.styles or [])).toHTML() %>
+</head>
+
+<body id="home">
+
+	<section class="nav-bar"> 
+		<input type="checkbox" id="menu-toggle"/>
+		<label for="menu-toggle" class="menu-toggle-label">&#9776;</label> 
+		<nav>
+			<h1>Navigation</h1>
+			<ul>
+			<% for menu in @getCollection("menus").toJSON(): %>
+				<li><a href="<%= menu.url %>"><%= menu.menuTitle or menu.title %></a></li>
+			<% end %>
+			</ul>
+		</nav>
+	</section>
+
+	<header>
+		<h1><%= @document.title %></h1>
+		<h2><%= @document.subtitle %></h2>
+	</header>
+
+	<main class="body">
+		<%- @content %>
+	</main>
+	
+	<!-- Scripts -->
+	<%- @getBlock('scripts').add(@site.scripts.concat(@document.scripts or [])).toHTML() %>
+</body>
+</html>

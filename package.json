@@ -1,58 +1,18 @@
 {
   "name": "cdmtecclub.com",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Corona del Mar HS's TEC Club homepage",
-  "main": "index.html",
-  "devDependencies": {
-    "browser-sync": "^1.3.3",
-    "gulp": "^3.8.7",
-    "gulp-autoprefixer": "^0.0.8",
-    "gulp-bower-files": "^0.2.7",
-    "gulp-cache": "^0.2.0",
-    "gulp-concat": "^2.3.4",
-    "gulp-csso": "^0.2.9",
-    "gulp-filter": "^1.0.0",
-    "gulp-flatten": "^0.0.2",
-    "gulp-if": "^1.2.4",
-    "gulp-imagemin": "^0.6.2",
-    "gulp-inject": "~1.0.1",
-    "gulp-jshint": "^1.8.4",
-    "gulp-karma": "^0.0.4",
-    "gulp-less": "^1.3.3",
-    "gulp-load-plugins": "^0.5.3",
-    "gulp-minify-html": "~0.1.4",
-    "gulp-ng-annotate": "^0.3.0",
-    "gulp-ng-html2js": "~0.1.7",
-    "gulp-plumber": "^0.6.4",
-    "gulp-print": "^1.1.0",
-    "gulp-protractor": "0.0.11",
-    "gulp-replace": "~0.4.0",
-    "gulp-rev": "^1.0.0",
-    "gulp-rev-replace": "^0.3.0",
-    "gulp-rimraf": "^0.1.0",
-    "gulp-size": "^1.0.0",
-    "gulp-uglify": "^0.3.1",
-    "gulp-useref": "^0.6.0",
-    "http-proxy": "~1.1.6",
-    "jshint-stylish": "^0.4.0",
-    "karma-jasmine": "^0.1.5",
-    "main-bower-files": "^1.0.2",
-    "marked": "^0.3.2",
-    "require-dir": "~0.1.0",
-    "streamqueue": "^0.1.1",
-    "uglify-save-license": "^0.4.1"
+  "engines": {
+    "node": "0.10",
+    "npm": "1.3"
   },
+  "dependencies": {
+    "docpad": "~6.69.1",
+    "docpad-plugin-eco": "~2.1.0",
+    "docpad-plugin-less": "~2.4.1"
+  },
+  "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tec-club/cdmtecclub.com.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/tec-club/cdmtecclub.com/issues"
-  },
-  "homepage": "https://github.com/tec-club/cdmtecclub.com"
+    "start": "node_modules/docpad/bin/docpad-server"
+  }
 }

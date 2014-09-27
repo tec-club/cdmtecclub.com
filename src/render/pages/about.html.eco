@@ -1,0 +1,11 @@
+---
+title: "About"
+subtitle: "Technology, Entrepreneurship, Coding"
+layout: "default"
+isPage: true
+isMenu: true
+menuTitle: "About"
+styles: ['test.css']
+---
+
+We are TEC Club.
