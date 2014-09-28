@@ -1,0 +1,41 @@
+header {
+    background-color: @primaryColor;
+    margin: 0;
+    padding: 2em .5em;
+
+    h1, h2 {
+    	text-align: center;
+    }
+
+    h1 {
+        font-size: 6em;
+        line-height: 1;
+        margin: .2em 0;
+        @media @desktop {
+        	line-height: 1.5;
+        }
+    }
+
+    h2 {
+    	margin-top: 0;
+    	font-size: .8em;
+    	@media @desktop {
+    		font-size: 1.2em;
+    	}
+    }
+}
+
+header.post {
+    height: @navHeight;
+    padding: 0;
+    h1 {
+        font-size: 2rem;
+        padding: .25em .5em;
+        margin: 0;
+        line-height: 1;
+        text-align: right;
+        @media @desktop {
+            text-align: left;
+        }
+    }
+}

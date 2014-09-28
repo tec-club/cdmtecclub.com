@@ -11,6 +11,10 @@ var docpadConfig = {
 
 	templateData: {
 		site: {
+			// Meta
+			title: 'TEC Club',
+			subtitle: 'Technology, Entrepreneurship, Coding',
+			
 			// Styles
 			styles: [
 				"//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css",
@@ -19,8 +23,8 @@ var docpadConfig = {
 
 			// Scripts
 			scripts: [
-				"/vendor/jquery.min.js",
-				"/scripts/script.js"
+				// "/vendor/jquery.min.js",
+				// "/scripts/script.js"
 			]
 		}
 	},

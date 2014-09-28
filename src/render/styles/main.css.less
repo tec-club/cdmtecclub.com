@@ -20,146 +20,32 @@ a {
 	color: inherit;
 }
 
-@navHeight: 3em;
-.nav-bar {
-    position: fixed;
-    top: 0;
-	height: @navHeight;
-
-	.menu-toggle-label {
-		position: absolute;
-		z-index: 9999;
-		top: .05em;
-		left: .25em;
-		font-size: 2em;
-		transition: all 1s;
-		@media @desktop {
-			display: none;
-		}
-    }
-    #menu-toggle {
-      display: none; /* hide the checkbox */
-    }
-    nav {
-    	position: fixed;
-		top: 0;
-		transition: all 1s;
-		@media (max-width: 960px) {
-			opacity: 0;
-			bottom: 0;
-			width: 0;
-			left: 0;
-			box-shadow: 10px 0px rgba(0,0,0,.5);
-		}
-		@media @desktop {
-			opacity: 1;
-			right: 2em;
-		}
-    }
-    #menu-toggle:checked {
-    	& + .menu-toggle-label {
-    		// color: rgba(255,255,255,.7);
-    	}
-    	& ~ nav {
-			width: 250px;
-			opacity: 1;
-		}
-    }
-	nav {
-		background: rgba(245,245,245,.95);
-		overflow: hidden;
-		@media @desktop {
-			background: transparent;
-			overflow: visible;
-		}
-
-		h1 {
-			display: block;
-			font-size: 1.5em;
-			margin: .25em 0 0 2em;
-			line-height: 1.66;
-			@media @desktop {
-				display: none;
-			}
-		}
-
-	    ul {
-	        list-style: none;
-	        padding: .5em;
-	        @media @desktop {
-	        	margin: .5em 0 0 0 ;
-	        	padding: 0;
-	        }
-	        li {
-	            display: block;
-	            @media @desktop {
-			        display: inline-block;
-	        		float: right;
-	        		margin-left: 10px;
-			    }
-	        }
-	    }
-
-	    a {
-	        padding: .25em 1em;
-	        transition: all .25s;
-	        opacity: .7;
-	        color: inherit;
-	        display: block;
-	        color: @primaryTextColor;
-
-	        &:hover {
-		        opacity: 1;
-		    }
-
-	        @media @desktop {
-		        border: 1px solid transparent;
-		        border-radius: 4px;
-		        color: @primaryTextColor;
-		        &:hover {
-			        border-color: @primaryTextColor;
-			    }
-
-			    &:active {
-			        background-color: @primaryTextColor;
-			        color: @primaryColor;
-			    }
-	        }
-	    }
-	}
-}
-
-header {
-    background-color: @primaryColor;
-    margin: 0;
-    padding: 2em .5em;
-
-    h1, h2 {
-    	text-align: center;
-    }
-
-    h1 {
-        font-size: 6em;
-        line-height: 1;
-        margin: .2em 0;
-        @media @desktop {
-        	line-height: 1.5;
-        }
-    }
-
-    h2 {
-    	margin-top: 0;
-    	font-size: .8em;
-    	@media @desktop {
-    		font-size: 1.2em;
-    	}
-    }
-}
-
 .body {
     width: 90%;
     margin: 0 auto;
     @media @desktop {
-    	width: 800px;
+        width: 800px;
     }
 }
+
+span.tec-logo-text {
+    line-height: 1;
+    padding: 0 .4em;
+    position: relative;
+    &::before, &::after {
+        position: absolute;
+        top: .1em;
+    }
+    &::before {
+        content: '{';
+        left: 0;
+    }
+    &::after {
+        content: '}';
+        right: 0;
+    }
+}
+
+@import 'header';
+@import 'menu';
+@import 'post';

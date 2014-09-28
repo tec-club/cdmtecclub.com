@@ -27,14 +27,7 @@
 		</nav>
 	</section>
 
-	<header>
-		<h1><%= @document.title %></h1>
-		<h2><%= @document.subtitle %></h2>
-	</header>
-
-	<main class="body">
-		<%- @content %>
-	</main>
+	<%- @content %>
 	
 	<!-- Scripts -->
 	<%- @getBlock('scripts').add(@site.scripts.concat(@document.scripts or [])).toHTML() %>

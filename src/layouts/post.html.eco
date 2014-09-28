@@ -1,0 +1,13 @@
+---
+layout: "default"
+---
+
+<header class="post">
+	<h1><span class="tec-logo-text">TEC</span></h1>
+</header>
+
+<main class="post body">
+	<h2><%= @document.title %></h2>
+	<small class="date"><%= @document.date %></small>
+	<%- @content %>
+</main>

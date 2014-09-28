@@ -1,11 +1,10 @@
 ---
 title: "TEC Club"
 subtitle: "Technology, Entrepreneurship, Coding"
-layout: "default"
+layout: "page"
 isPage: true
 isMenu: true
 menuTitle: "Home"
-styles: ['test.css']
 ---
 
 <% for post in @getCollection("posts").toJSON(): %>
