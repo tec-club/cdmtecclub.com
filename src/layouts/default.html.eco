@@ -14,11 +14,13 @@
 
 <body id="home">
 
-	<section class="nav-bar"> 
+	<section class="navbar"> 
 		<input type="checkbox" id="menu-toggle"/>
-		<label for="menu-toggle" class="menu-toggle-label">&#9776;</label> 
+		<label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
+		<header class="page">
+			<h1 class="tec-logo-text">TEC</h1>
+		</header>
 		<nav>
-			<h1>Navigation</h1>
 			<ul>
 			<% for menu in @getCollection("menus").toJSON(): %>
 				<li><a href="<%= menu.url %>"><%= menu.menuTitle or menu.title %></a></li>
@@ -26,6 +28,11 @@
 			</ul>
 		</nav>
 	</section>
+
+	<header>
+		<h1 class="page-title"><%= @document.title %></h1>
+		<h2 class="page-subtitle"><%= @document.subtitle %></h2>
+	</header>
 
 	<%- @content %>
 	

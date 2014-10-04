@@ -1,23 +1,31 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
 
-@yellow: #f1c40f;
+@red: #e74c3c;
+@darkerRed: #c0392b;
 
-@primaryColor: @yellow;
-@primaryTextColor: #333;
+@primaryColor: @red;
+@secondaryColor: @darkerRed;
+
+@primaryTextColor: @primaryColor;
+@secondaryTextColor: @secondaryColor;
+@defaultTextColor: #333;
+
+@navHeight: 3em;
 
 @desktop: ~'(min-width: 960px)';
 
 body {
-    color: @primaryTextColor;
+    color: @defaultTextColor;
     background: #fcfcfc;
     font-family: 'Open Sans';
     font-size: 16px;
+    padding-top: @navHeight;
 }
 
 a {
     cursor: pointer;
 	text-decoration: none;
-	color: inherit;
+	color: @primaryTextColor;
 }
 
 .body {
@@ -28,13 +36,14 @@ a {
     }
 }
 
-span.tec-logo-text {
+.tec-logo-text {
     line-height: 1;
     padding: 0 .4em;
     position: relative;
+    display: inline-block;
     &::before, &::after {
         position: absolute;
-        top: .1em;
+        top: -.05em;
     }
     &::before {
         content: '{';
@@ -46,6 +55,12 @@ span.tec-logo-text {
     }
 }
 
-@import 'header';
+.posts {
+    h2, small {
+        color: @defaultTextColor;
+    }
+}
+
 @import 'menu';
+@import 'header';
 @import 'post';

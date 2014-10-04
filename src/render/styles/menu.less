@@ -1,9 +1,33 @@
-@navHeight: 3em;
-.nav-bar {
+// Header/title items
+.navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     height: @navHeight;
 
+    transition: box-shadow .5s;
+    &.shadow {
+        box-shadow: 0 2px 5px rgba(0,0,0,.26);
+    }
+
+    background-color: @primaryColor;
+
+    @media @desktop {
+        padding: 0 200px;
+    }
+
+    header {
+        h1 {
+            display: inline-block;
+            font-size: @navHeight / 2;
+            margin: @navHeight/4 0;
+        }
+    }
+}
+
+// Navigation items
+.navbar {
     .menu-toggle-label {
         position: absolute;
         z-index: 9999;
@@ -84,7 +108,7 @@
             opacity: .7;
             color: inherit;
             display: block;
-            color: @primaryTextColor;
+            color: @defaultTextColor;
 
             &:hover {
                 opacity: 1;
@@ -93,9 +117,9 @@
             @media @desktop {
                 border: 1px solid transparent;
                 border-radius: 4px;
-                color: @primaryTextColor;
+                color: @defaultTextColor;
                 &:hover {
-                    border-color: @primaryTextColor;
+                    border-color: @defaultTextColor;
                 }
 
                 &:active {
