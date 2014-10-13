@@ -12,13 +12,13 @@
 	<%- @getBlock('styles').add(@site.styles.concat(@document.styles or [])).toHTML() %>
 </head>
 
-<body id="home">
+<body id="home" class="<%= @document.layout if @document.layout %>">
 
 	<section class="navbar"> 
 		<input type="checkbox" id="menu-toggle"/>
 		<label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
-		<header class="page">
-			<h1 class="tec-logo-text">TEC</h1>
+		<header>
+			<a href="/"><h1 class="tec-logo-text">TEC</h1></a>
 		</header>
 		<nav>
 			<ul>
@@ -28,11 +28,6 @@
 			</ul>
 		</nav>
 	</section>
-
-	<header>
-		<h1 class="page-title"><%= @document.title %></h1>
-		<h2 class="page-subtitle"><%= @document.subtitle %></h2>
-	</header>
 
 	<%- @content %>
 	
