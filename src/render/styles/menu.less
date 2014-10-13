@@ -1,10 +1,13 @@
 // Header/title items
+@desktopNavPadding: 2em;
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: @navHeight;
+
+    z-index: 9999;
 
     transition: box-shadow .5s;
     &.shadow {
@@ -14,7 +17,7 @@
     background-color: @primaryColor;
 
     @media @desktop {
-        padding: 0 200px;
+        padding: 0 @desktopNavPadding;
     }
 
     header {
@@ -22,6 +25,16 @@
             display: inline-block;
             font-size: @navHeight / 2;
             margin: @navHeight/4 0;
+
+            color: @defaultTextColor;
+
+            line-height: 2em;
+            margin-right: .5em;
+            margin-top: .05em;
+            float: right;
+            @media @desktop {
+                float: none;
+            }
         }
     }
 }
@@ -55,7 +68,7 @@
         }
         @media @desktop {
             opacity: 1;
-            right: 2em;
+            right: @desktopNavPadding;
         }
     }
     #menu-toggle:checked {

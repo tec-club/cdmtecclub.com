@@ -35,7 +35,7 @@ var docpadConfig = {
     collections: {
         posts: function() {
             return this.getCollection("documents").findAllLive({
-                isPost: true
+                type: "post"
             }, [{
                 date: -1
             }]);
