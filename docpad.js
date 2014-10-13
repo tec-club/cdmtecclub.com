@@ -41,6 +41,12 @@ var docpadConfig = {
             }]);
         },
 
+        workshops: function() {
+        	return this.getCollection("documents").findAllLive({
+                type: "workshop"
+            });
+        },
+
         menus: function() {
             return this.getCollection("documents").findAllLive({
                 isMenu: true
