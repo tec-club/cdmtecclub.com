@@ -11,6 +11,9 @@ var docpadConfig = {
 
 	templateData: {
 		site: {
+			// Base URL
+			url: 'http://cdmtecclub.com',
+
 			// Meta
 			title: 'TEC Club',
 			subtitle: 'Technology, Entrepreneurship, Coding',
@@ -52,7 +55,30 @@ var docpadConfig = {
                 isMenu: true
             });
         }
-    }
+    },
+
+    environments: {
+    	development: {
+    		templateData: {
+    			site: {
+    				url: 'http://localhost:9778'
+    			}
+    		}
+    	}
+    },
+
+
+docpadConfig.templateData.helpers = {
+	baseUrl: function (url) {
+		if (url instanceof Array) {
+			for (var i = 0; i < url.length; i++) {
+				url[i] = docpadConfig.templateData.helpers.baseUrl(url[i]);
+			}
+			return url;
+		} else {
+			return url.replace('%baseUrl%', docpadConfig.templateData.site.url);
+		}
+	}
 };
 
 // Export the DocPad Configuration

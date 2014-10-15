@@ -9,7 +9,7 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<!-- Styles -->
-	<%- @getBlock('styles').add(@site.styles.concat(@document.styles or [])).toHTML() %>
+	<%- @getBlock('styles').add(@site.styles.concat(@helpers.baseUrl(@document.styles or []))).toHTML() %>
 </head>
 
 <body id="home" class="<%= @document.layout if @document.layout %>">
