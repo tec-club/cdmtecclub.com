@@ -1,0 +1,9 @@
+---
+title: "JavaScript"
+subtitle: "Coding Workshop"
+layout: "workshop"
+type: "workshop"
+
+workshop: "javascript"
+image: "http://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+---

@@ -1,0 +1,15 @@
+---
+title: "Coding Workshops"
+layout: "page"
+isMenu: true
+menuTitle: "Workshops"
+
+styles: ['workshops.css']
+---
+
+<% for workshop in @getCollection("workshops").toJSON(): %>
+    <a href="<%= workshop.url %>"><article class="workshop-entry">
+        <div class="thumbnail" style="background-image: url(<%= workshop.image %>)"></div>
+        <p><%= workshop.title %></p>
+    </article></a>
+<% end %>

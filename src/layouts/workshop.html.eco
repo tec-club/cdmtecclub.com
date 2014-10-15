@@ -1,0 +1,18 @@
+---
+layout: "default"
+type: "workshop"
+---
+
+<header>
+	<h1 class="page-title"><%= @document.title %></h1>
+	<h2 class="page-subtitle"><%= @document.subtitle %></h2>
+</header>
+
+<main class="body">
+	<% for lesson in @getCollection("documents").findAllLive({workshop: @document.workshop, type: "lesson"}).toJSON(): %>
+	    <a href="<%= lesson.url %>"><article class="lesson-entry">
+	        <h2><%= lesson.title %></h2>
+	        <p><%= lesson.description %></p>
+	    </article></a>
+	<% end %>
+</main>

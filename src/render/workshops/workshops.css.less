@@ -1,0 +1,27 @@
+.body {
+	padding-top: 2em;
+}
+
+@entryPadding: .75em;
+@entryWidth: 5em;
+.workshop-entry {
+	display: inline-block;
+	padding: @entryPadding;
+	border: 1px solid #ccc;
+	transition: background .5s;
+
+	.thumbnail {
+		width: @entryWidth;
+		height: @entryWidth;
+		background-size: cover;
+	}
+	p {
+		margin: @entryPadding 0 0 0;
+		text-align: center;
+		max-width: @entryWidth;
+	}
+
+	&:hover {
+		background: #eee;
+	}
+}
