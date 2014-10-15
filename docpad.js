@@ -67,6 +67,14 @@ var docpadConfig = {
     	}
     },
 
+    plugins: {
+    	marked: {
+		    markedOptions: {
+		    	smartypants: true
+		    }
+		}
+	}
+};
 
 docpadConfig.templateData.helpers = {
 	baseUrl: function (url) {
