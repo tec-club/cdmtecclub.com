@@ -12,7 +12,7 @@
 	<%- @getBlock('styles').add(@site.styles.concat(@helpers.baseUrl(@document.styles or []))).toHTML() %>
 </head>
 
-<body id="home" class="<%= @document.layout if @document.layout %>">
+<body ng-app="cdmtecclub" id="home" class="<%= @document.layout if @document.layout %>">
 
 	<section class="navbar"> 
 		<input type="checkbox" id="menu-toggle"/>

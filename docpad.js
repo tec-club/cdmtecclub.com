@@ -27,7 +27,8 @@ var docpadConfig = {
 			// Scripts
 			scripts: [
 				// "/vendor/jquery.min.js",
-				// "/scripts/script.js"
+				"//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js",
+				"/scripts/main.js"
 			]
 		}
 	},
