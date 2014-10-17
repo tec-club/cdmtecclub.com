@@ -10,9 +10,17 @@ type: "workshop"
 
 <main class="body">
 	<% for lesson in @getCollection("documents").findAllLive({workshop: @document.workshop, type: "lesson"}).toJSON(): %>
-	    <a href="<%= lesson.url %>"><article class="lesson-entry">
-	        <h2><%= lesson.title %></h2>
-	        <p><%= lesson.description %></p>
-	    </article></a>
+		<article class="lesson-entry <%= 'additional' if lesson.additional %>">
+		    <a href="<%= lesson.url %>" class="lesson-link">
+		        <h2><%= lesson.title %></h2>
+		        <p><%= lesson.description %></p>
+		    </a>
+		   	<% if lesson.additional: %><% for resource in lesson.additional: %>
+		   		<a class="resource" href="<%= resource.url %>">
+		   			<h3><%= resource.title %></h3>
+		   			<p><%= resource.description %></p>
+		   		</a>
+		   	<% end %><% end %>
+	    </article>
 	<% end %>
 </main>
