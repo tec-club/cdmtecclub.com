@@ -1,9 +1,46 @@
-@navHeight: 3em;
-.nav-bar {
+// Header/title items
+@desktopNavPadding: 2em;
+.navbar {
     position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     height: @navHeight;
 
+    z-index: 9999;
+
+    transition: box-shadow .5s;
+    &.shadow {
+        box-shadow: 0 2px 5px rgba(0,0,0,.26);
+    }
+
+    background-color: @primaryColor;
+
+    @media @desktop {
+        padding: 0 @desktopNavPadding;
+    }
+
+    header {
+        h1 {
+            display: inline-block;
+            font-size: @navHeight / 2;
+            margin: @navHeight/4 0;
+
+            color: @defaultTextColor;
+
+            line-height: 2em;
+            margin-right: .5em;
+            margin-top: .05em;
+            float: right;
+            @media @desktop {
+                float: none;
+            }
+        }
+    }
+}
+
+// Navigation items
+.navbar {
     .menu-toggle-label {
         position: absolute;
         z-index: 9999;
@@ -31,7 +68,7 @@
         }
         @media @desktop {
             opacity: 1;
-            right: 2em;
+            right: @desktopNavPadding;
         }
     }
     #menu-toggle:checked {
@@ -84,7 +121,7 @@
             opacity: .7;
             color: inherit;
             display: block;
-            color: @primaryTextColor;
+            color: @defaultTextColor;
 
             &:hover {
                 opacity: 1;
@@ -93,9 +130,9 @@
             @media @desktop {
                 border: 1px solid transparent;
                 border-radius: 4px;
-                color: @primaryTextColor;
+                color: @defaultTextColor;
                 &:hover {
-                    border-color: @primaryTextColor;
+                    border-color: @defaultTextColor;
                 }
 
                 &:active {

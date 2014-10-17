@@ -1,41 +1,64 @@
-header {
-    background-color: @primaryColor;
-    margin: 0;
-    padding: 2em .5em;
+@headerPaddingSides: 2em;
+body > header {
+	background-color: @primaryColor;
+	text-align: center;
 
-    h1, h2 {
-    	text-align: center;
-    }
+	padding: @headerPaddingSides;
 
-    h1 {
-        font-size: 6em;
-        line-height: 1;
-        margin: .2em 0;
-        @media @desktop {
-        	line-height: 1.5;
-        }
-    }
+	h1 {
+		margin: 0;
+		font-size: 4em;
 
-    h2 {
-    	margin-top: 0;
-    	font-size: .8em;
-    	@media @desktop {
-    		font-size: 1.2em;
-    	}
-    }
+		@media @desktop {
+			font-size: 6em;
+		}
+	}
+
+	h2 {
+
+	}
 }
 
-header.post {
-    height: @navHeight;
-    padding: 0;
-    h1 {
-        font-size: 2rem;
-        padding: .25em .5em;
-        margin: 0;
-        line-height: 1;
-        text-align: right;
-        @media @desktop {
-            text-align: left;
-        }
-    }
+body.post > header {
+	&.background-image {
+		background-color: black;
+		color: white;
+		padding: 20% @headerPaddingSides;
+		max-height: 14em;
+		position: relative;
+		@media @desktop {
+			padding: 12em;
+		}
+		.header-background {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			
+			background-size: cover;
+			background-position-x: left;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+		}
+		.titles {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: linear-gradient(0, rgba(0,0,0,1), rgba(0,0,0,0));
+		}
+		h2 {
+			padding: 3em 2em 1em 2em;
+			font-size: 1em;
+			text-align: left;
+			@media @desktop {
+				padding: 3em 2em .5em 2em;
+				font-size: 1.75em;
+			}
+		}
+	}
+	h1, h2 {
+		text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+	}
 }

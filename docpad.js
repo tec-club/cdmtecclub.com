@@ -11,6 +11,9 @@ var docpadConfig = {
 
 	templateData: {
 		site: {
+			// Base URL
+			url: 'http://cdmtecclub.com',
+
 			// Meta
 			title: 'TEC Club',
 			subtitle: 'Technology, Entrepreneurship, Coding',
@@ -24,7 +27,8 @@ var docpadConfig = {
 			// Scripts
 			scripts: [
 				// "/vendor/jquery.min.js",
-				// "/scripts/script.js"
+				"//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js",
+				"/scripts/main.js"
 			]
 		}
 	},
@@ -35,10 +39,16 @@ var docpadConfig = {
     collections: {
         posts: function() {
             return this.getCollection("documents").findAllLive({
-                isPost: true
+                type: "post"
             }, [{
                 date: -1
             }]);
+        },
+
+        workshops: function() {
+        	return this.getCollection("documents").findAllLive({
+                type: "workshop"
+            });
         },
 
         menus: function() {
@@ -46,7 +56,38 @@ var docpadConfig = {
                 isMenu: true
             });
         }
-    }
+    },
+
+    environments: {
+    	development: {
+    		templateData: {
+    			site: {
+    				url: 'http://localhost:9778'
+    			}
+    		}
+    	}
+    },
+
+    plugins: {
+    	marked: {
+		    markedOptions: {
+		    	smartypants: true
+		    }
+		}
+	}
+};
+
+docpadConfig.templateData.helpers = {
+	baseUrl: function (url) {
+		if (url instanceof Array) {
+			for (var i = 0; i < url.length; i++) {
+				url[i] = docpadConfig.templateData.helpers.baseUrl(url[i]);
+			}
+			return url;
+		} else {
+			return url.replace('%baseUrl%', docpadConfig.templateData.site.url);
+		}
+	}
 };
 
 // Export the DocPad Configuration

@@ -13,6 +13,6 @@ menuTitle: "Home"
             <h2><%= post.title %></h2>
         	<small class="date"><%= post.date %></small>         
         </a>
-        <p><%= post.content.substring(0, 300) %>...</p>
+        <p><%- post.contentRenderedWithoutLayouts?.substring(0, 300) %>...</p>
     </article>
 <% end %>

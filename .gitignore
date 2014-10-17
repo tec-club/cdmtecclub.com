@@ -1,3 +1,6 @@
 # DocPad
 node_modules/
 out/
+
+*.sublime-workspace
+cdmtecclub.com.sublime-workspace

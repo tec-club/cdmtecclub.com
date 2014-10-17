@@ -1,0 +1,63 @@
+---
+title: "Javascript: Workshop 2"
+subtitle: "First JavaScript Web App"
+description: "We will be using Sublime Text 3 to develop our first, basic web app using JavaScript and HTML."
+date: 2014-10-16
+author: "Alex Wendland"
+
+layout: "post"
+
+workshop: "javascript"
+type: "lesson"
+backgroundImage: "bg.png"
+---
+
+We will develop our first web application using the JavaScript language. We will make use of our IDE, Sublime Text 3, and Python as our webserver.
+
+### Step 1: Create a Project
+
+Browse to a directory in the "code" folder on your computer. If you have not created a "code" folder --simply a folder on your hard drive for storing your code projects-- you can create one now. A common location to put you "code" folder in is your `Home` directory. This is the directory that has "My Documents", if your on Windows, or "Documents", if your on Linux/OSX.
+
+Within your "code" directory, create a new folder called "2-first-webapp" --this name is encouraged because it matches this lesson's title and will keep the directory clean and manageable as we add more folders.
+
+Open Sublime Text 3 and select `File > Open...`. Navigate to "2-first-webapp" which you just created.
+
+Open up Terminal/Command Prompt and `cd` to the "2-first-webapp" directory as well. If you create your "code" directory in your home folder you will need to run `cd code/2-first-webapp"
+
+### Step 2: Setup the app
+
+Create a new file by selecting `File > New File`. Hit `ctrl/cmd + s` and save the file as `index.html` in the "2-first-webapp" directory.
+
+### Step 3: Test your setup
+
+In `index.html`, type the word `hi, {your name}`, replacing `{your name}` with your name. Save the file with `ctrl/cmd + s`.
+
+In the Terminal/Command Prompt, execute `python -m SimpleHTTPServer`. Now open your web browser and navigate to [http://localhost:8000](http://localhost:8000).
+
+You should see:
+!["Hi, {Your Name}"](hi-demo-image.png)
+
+### Step 4: Setup HTML5 Boilerplate
+
+We are going to start with boilerplate code to setup our page with. This code will already have basic, required HTML syntax to get us started. Copy:
+<remote-code data-src="<%= @site.url %>/code-resources/boilerplate/simple.html"></remote-code>
+
+Paste it into your `index.html` file and save.
+
+### Step 5: Get Coding
+
+In `index.html`, replace the lines `<!-- Put HTML here -->` with `<pre id="output"></pre>`.
+
+Now create a new file called `main.js` in the same directory as `index.html`. Within this file type the code:
+
+```
+var outputElem = document.querySelector('#output');
+
+outputElem.innerHTML = '2 + 2 = 4';
+```
+
+Reload the page and look at your output!
+
+### Step 6: Explanation
+
+Work in progres...

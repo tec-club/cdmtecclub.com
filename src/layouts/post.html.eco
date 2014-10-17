@@ -2,11 +2,19 @@
 layout: "default"
 ---
 
-<header class="post">
-	<h1><span class="tec-logo-text">TEC</span></h1>
+<header class="<%= 'background-image' if @document.backgroundImage %>">
+	<% if @document.backgroundImage: %>
+	    <div class="header-background" <%- 'style="background-image: url(' + @document.backgroundImage + '); background-position-y: ' + @document.backgroundYOffset + ';"' %>></div>
+	    <div class="titles">
+			<h2 class="page-subtitle"><%= @document.subtitle %></h2>
+		</div>
+	<% else: %>
+		<h1 class="page-title"><%= @document.title %></h1>
+		<h2 class="page-subtitle"><%= @document.subtitle %></h2>
+	<% end %>
 </header>
 
-<main class="post body">
+<main class="body">
 	<h2><%= @document.title %></h2>
 	<small class="date"><%= @document.date %></small>
 	<%- @content %>

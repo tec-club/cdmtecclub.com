@@ -9,16 +9,18 @@
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 	<!-- Styles -->
-	<%- @getBlock('styles').add(@site.styles.concat(@document.styles or [])).toHTML() %>
+	<%- @getBlock('styles').add(@site.styles.concat(@helpers.baseUrl(@document.styles or []))).toHTML() %>
 </head>
 
-<body id="home">
+<body ng-app="cdmtecclub" id="home" class="<%= @document.layout if @document.layout %>">
 
-	<section class="nav-bar"> 
+	<section class="navbar"> 
 		<input type="checkbox" id="menu-toggle"/>
-		<label for="menu-toggle" class="menu-toggle-label">&#9776;</label> 
+		<label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
+		<header>
+			<a href="/"><h1 class="tec-logo-text">TEC</h1></a>
+		</header>
 		<nav>
-			<h1>Navigation</h1>
 			<ul>
 			<% for menu in @getCollection("menus").toJSON(): %>
 				<li><a href="<%= menu.url %>"><%= menu.menuTitle or menu.title %></a></li>

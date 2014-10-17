@@ -1,12 +1,13 @@
 ---
 layout: "default"
+type: "page"
 ---
 
-<header class="page">
-	<h1><%= @site.title %></h1>
-	<h2><%= @site.subtitle %></h2>
+<header>
+	<h1 class="page-title"><%= @document.title %></h1>
+	<h2 class="page-subtitle"><%= @document.subtitle %></h2>
 </header>
 
-<main class="page body">
+<main class="body">
 	<%- @content %>
 </main>
