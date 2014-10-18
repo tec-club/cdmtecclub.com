@@ -32,9 +32,7 @@ angular
 				syntax: '@?'
 			},
 			restrict: 'EAC',
-			template: ' <pre class="enhanced-code-container">' +
-			'				<code ng-transclude>{{remoteCode}}</code>' +
-			'			</pre>' +
+			template: ' <pre class="enhanced-code-container"><code ng-transclude>{{remoteCode}}</code></pre>' +
 			'			<div class="actions">' +
 			'				<a class="popup" ng-click="openInPopup()"><i class="fa fa-copy"></i></a>' +
 			'			</div>',

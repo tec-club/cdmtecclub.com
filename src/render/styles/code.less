@@ -1,18 +1,15 @@
-code {
+code, pre {
     background: #eee;
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: .2em;
+
+    line-height: 1.2;
 }
-pre {
-    background: #eee;
-    border: 1px solid #ccc;
-    & > code {
-        display: block;
-        background: none;
-        border: none;
-        width: 100%;
-    }
+pre > code {
+    background: none;
+    border: none;
+    width: 100%;
 }
 
 .enhanced-code {
