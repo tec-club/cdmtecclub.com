@@ -63,17 +63,17 @@ var docpadConfig = {
     	development: {
     		templateData: {
     			site: {
-    				url: 'http://localhost:9778'
-    			},
-    			styles: [
-					"/local/normalize.min.css",
-					"/local/font-awesome.min.css",
-					"/styles/main.css"
-    			],
-    			scripts: [
-    				"/local/angular.min.js",
-					"/scripts/main.js"
-    			]
+    				url: 'http://localhost:9778',
+	    			styles: [
+						"/local/normalize.min.css",
+						"/local/font-awesome.min.css",
+						"/styles/main.css"
+	    			],
+	    			scripts: [
+	    				"/local/angular.min.js",
+						"/scripts/main.js"
+	    			]
+    			}
     		}
     	}
     },
