@@ -50,11 +50,9 @@ In `index.html`, replace the lines `<!-- Put HTML here -->` with `<pre id="outpu
 
 Now create a new file called `main.js` in the same directory as `index.html`. Within this file type the code:
 
-```
-var outputElem = document.querySelector('#output');
-
-outputElem.innerHTML = '2 + 2 = 4';
-```
+    var outputElem = document.querySelector('#output');
+    
+    outputElem.innerHTML = '2 + 2 = 4';
 
 Reload the page and look at your output!
 
