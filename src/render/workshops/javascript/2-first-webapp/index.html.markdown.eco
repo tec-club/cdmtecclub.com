@@ -58,6 +58,22 @@ outputElem.innerHTML = '2 + 2 = 4';
 
 Reload the page and look at your output!
 
-### Step 6: Explanation
+### Step 6: Explanation of HTML
 
-Work in progres...
+So what is going on? In the `index.html` file we have several lines of HTML markup.
+
+We added the line `<pre id="output"></pre>`. This line creates a [pre (MDN Documentation)][mdn pre element] element and gives it the id of `output`. We use this id later in our JavaScript code to get a reference to the element.
+
+Another important line is `<script src="main.js"></script>`. This line tells the browser that we have a JavaScript file located in the same directory, named `main.js` that we want to be loaded and exectuted.
+
+### Step 7: Explination of main.js
+
+Within the `main.js` JavaScript file that we previously created, we have [document.querySelector][mdn queryselector] which scans the HTML file for the `<pre>` element that we created in `index.html`. We then store a reference to this element in `outputElem`.
+
+We utilize this reference in the line `outputElem.innerHTML = '2 + 2 = 4'`. The `outputElem.innerHTML` portion of the line is accessing a property on the `outputElem` object reference. The property [innerHTML][mdn innerhtml] contains the value of the HTML code that is within the `pre` element. Initially it is blank because we didn't put anything between the `<pre></pre>` tag. With the JavaScript line, we update it to hold the String `2 + 2 = 4`. This updates the element in the browser's display and thus we see:
+
+!["2 + 2 = 4"](2-2-4-output.png)
+
+[mdn pre element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre "MDN: pre"
+[mdn queryselector]: https://developer.mozilla.org/en-US/docs/Web/API/document.querySelector "MDN: document.querySelector()"
+[mdn innerhtml]: https://developer.mozilla.org/en-US/docs/Web/API/Element.innerHTML "MDN: Element.innerHTML"
