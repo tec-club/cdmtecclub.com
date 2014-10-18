@@ -29,6 +29,7 @@ var docpadConfig = {
 			scripts: [
 				// "/vendor/jquery.min.js",
 				"//ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js",
+				"//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.3/highlight.min.js",
 				"/scripts/main.js"
 			]
 		}
@@ -71,6 +72,7 @@ var docpadConfig = {
 	    			],
 	    			scripts: [
 	    				"/local/angular.min.js",
+	    				"/local/highlight.min.js",
 						"/scripts/main.js"
 	    			]
     			}

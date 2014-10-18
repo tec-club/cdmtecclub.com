@@ -12,6 +12,15 @@ function escapeHtmlString(str) {
 			.replace(/>/g, '&gt;');
 }
 
+/*
+ * Initialize highlight.js
+ */
+hljs.initHighlightingOnLoad();
+var codeBlocks = document.querySelectorAll('code');
+for (var i = 0; i < codeBlocks.length; i++) {
+	hljs.highlightBlock(codeBlocks[i]);
+};
+
 /* http://cdmtecclub.com angular app
  *
  * Expected to be loaded on every page. Should be very light
@@ -49,6 +58,7 @@ angular
 					$http.get(scope.src).then(function enhancedCodeGetRemoteCode(resp) {
 						scope.remoteCode = resp.data;
 						elem.find('code').text(scope.remoteCode);
+						hljs.highlightBlock(elem.find('code')[0]);
 					});
 				}
 			}
