@@ -40,7 +40,7 @@ You should see:
 ### Step 4: Setup HTML5 Boilerplate
 
 We are going to start with boilerplate code to setup our page with. This code will already have basic, required HTML syntax to get us started. Copy:
-<remote-code data-src="<%= @site.url %>/code-resources/boilerplate/simple.html"></remote-code>
+<enhanced-code data-src="<%= @site.url %>/code-resources/boilerplate/simple.html"></enhanced-code>
 
 Paste it into your `index.html` file and save.
 

@@ -14,3 +14,30 @@ pre {
         width: 100%;
     }
 }
+
+.enhanced-code {
+    position: relative;
+    .actions {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+
+        opacity: 0;
+        transition: opacity .5s;
+        pointer-events: none;
+        a {
+            float: right;
+            display: block;
+        }
+        .copy {
+
+        }
+    }
+
+    &:hover {
+        .actions {
+            pointer-events: auto;
+            opacity: 1;
+        }
+    }
+}
