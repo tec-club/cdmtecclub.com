@@ -60,7 +60,7 @@ Reload the page and look at your output!
 
 So what is going on? In the `index.html` file we have several lines of HTML markup.
 
-We added the line `<pre id="output"></pre>`. This line creates a [pre (MDN Documentation)][mdn pre element] element and gives it the id of `output`. We use this id later in our JavaScript code to get a reference to the element.
+We added the line `<pre id="output"></pre>`. This line creates a [pre][mdn pre element] element and gives it the id of `output`. We use this id later in our JavaScript code to get a reference to the element.
 
 Another important line is `<script src="main.js"></script>`. This line tells the browser that we have a JavaScript file located in the same directory, named `main.js` that we want to be loaded and exectuted.
 
