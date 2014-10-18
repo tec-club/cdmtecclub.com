@@ -21,6 +21,7 @@ var docpadConfig = {
 			// Styles
 			styles: [
 				"//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css",
+				"//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css",
 				"/styles/main.css"
 			],
 
@@ -63,7 +64,16 @@ var docpadConfig = {
     		templateData: {
     			site: {
     				url: 'http://localhost:9778'
-    			}
+    			},
+    			styles: [
+					"/local/normalize.min.css",
+					"/local/font-awesome.min.css",
+					"/styles/main.css"
+    			],
+    			scripts: [
+    				"/local/angular.min.js",
+					"/scripts/main.js"
+    			]
     		}
     	}
     },
