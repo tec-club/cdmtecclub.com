@@ -72,6 +72,13 @@ We utilize this reference in the line `outputElem.innerHTML = '2 + 2 = 4'`. The 
 
 !["2 + 2 = 4"](2-2-4-output.png)
 
+
+### Wrap Up
+
+Here is a zip file of the final code that you should have at the end of this project. We'll be using this as the starting point for the next lesson.
+
+[2-first-webapp.zip](2-first-webapp.zip)
+
 [mdn pre element]: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/pre "MDN: pre"
 [mdn queryselector]: https://developer.mozilla.org/en-US/docs/Web/API/document.querySelector "MDN: document.querySelector()"
 [mdn innerhtml]: https://developer.mozilla.org/en-US/docs/Web/API/Element.innerHTML "MDN: Element.innerHTML"
