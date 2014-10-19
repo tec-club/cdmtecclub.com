@@ -1,0 +1,68 @@
+---
+title: "Javascript: Workshop 3"
+subtitle: "JavaScript Variables and Strings"
+description: "We will make our first webapp dynamic by using variables"
+date: 2014-10-19
+author: "Alex Wendland"
+
+layout: "post"
+
+workshop: "javascript"
+type: "lesson"
+backgroundImage: "http://designshack.net/wp-content/uploads/prog101-1.jpg"
+
+additional:
+	- name: Khan Academy: Variables
+	  url: https://www.khanacademy.org/computing/cs/programming/variables/p/intro-to-variables
+---
+
+We will add variable usage to our first webapp.
+
+We'll be using the code that we wrote in Workshop 2, you can download a zip file of the end result of the last project [2-first-webapp.zip](../2-first-webapp/2-first-webapp.zip).
+
+### Step 1: Strings
+
+Open up `main.js`. As of now, we are inserting a [String][mdn string] directly into the output element. `'2 + 2 = 4'` is a String as denoted by the `'`s around the text `2 + 2 = 4`. That output is static, it won't change if we change the values of the String, for example `'2 + 3 = 4'` will print out just fine. We can improve on this though.
+
+### Step 2: Variables
+
+A variable is a container for a value. It is a box with a name that you can put something into, take stuff out of, and change the value of. Khan Academy has a great video on [variables][khan variables].
+
+We're going to replace the `4` in our expression with a variable. To do so, type:
+
+    var result = 4;
+
+on line 2 of `main.js`. Next rewrite line 3 to say:
+
+    outputElem.innerHTML = '2 + 2 = ' + result;
+
+rerun the program and notice that the exact same result is show. Now lets switch things up, change line 2 to:
+
+    var result = 'four';
+
+save, and reload the page. Notice that the output says '2 + 2 = four'! Our variable that we created called `result` is taking on the value that we set it equal to with the `=` operator.
+
+### Step 3: Variable Operations
+
+Let's make our program more dynamic. As of now, we can still write `2 + 3 = four` and it will output. Let's change that so that the variable `result` actually equals the addition expression that we wrote.
+
+Create two more variables above the `var result = four`. Call one variable 'num1', and the other 'num2'. The format for variable declaration is `var {variable_name} = {variable_value};`. Set them equal to two random integers, for example, `var num1 = 5;`.
+
+Now we'll rewrite `result` to use these values. JavaScript allows us to perform many operations on values, addition is a simple one. Rewrite `result` to be equal to `num1` + `num2`. The format for addition is simple, we just use `{value_1} {operator} {value_2}`; in this case the operator is a `+` symbol. Our code should look like this:
+
+    var outputElem = document.querySelector('#output');
+    var num1 = 5;
+    var num2 = 7;
+    var result = num1 + num2;
+    outputElem.innerHTML = '2 + 2 = ' + result;
+
+If we run our code we see that the output isn't right though. It still says '2 + 2' at the beginning. We need to update the output line to use the values we set for `num1` and `num2`.
+
+### Step 4: String Concatenation
+
+In JavaScript, the `+` operator has multiple uses. When used with numbers it acts as addition. Yet when used with Strings it acts as a concatenation function. What that means is that it will combine two Strings into one. `'hello' + ' John'` will result in `'hello John'`. This feature doesn't seem useful in that example, but with variables it becomes very useful. We can rewrite our expression in line 5 to make use of this function.
+
+     outputElem.innerHTML = num1 + ' + ' + num2 + ' = ' + result;
+
+[mdn string]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String "MDN: String"
+[khan variables]: https://www.khanacademy.org/computing/cs/programming/variables/p/intro-to-variables "Khan Academy: Variables"
