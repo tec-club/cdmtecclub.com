@@ -4,6 +4,8 @@ subtitle: "Coding Workshop"
 layout: "workshop"
 type: "workshop"
 
+styles: ['../workshops.css']
+
 workshop: "javascript"
 image: "http://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
 ---
