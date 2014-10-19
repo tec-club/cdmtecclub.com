@@ -35,6 +35,7 @@ Python 2.7.6
 ```
 
 If it doesn't, follow the directions at one of these links:
+
  * (Windows): [Setting up Python in Windows 7, by Anthony DeBarros][python windows guide]
  * (OSX): [https://www.python.org/download/mac][python mac]
  * (Linux): [Installing Python on Linux][python linux]
