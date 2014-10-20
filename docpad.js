@@ -83,7 +83,7 @@ var docpadConfig = {
     plugins: {
     	marked: {
 		    markedOptions: {
-		    	smartypants: true
+		    	smartypants: false // currently, true turns ' and " into smart quotes in code blocks
 		    }
 		}
 	}
