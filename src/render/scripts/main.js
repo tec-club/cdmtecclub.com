@@ -15,6 +15,11 @@ function escapeHtmlString(str) {
 /*
  * Initialize highlight.js
  */
+hljs.configure({
+	languages: hljs.listLanguages().filter(function (lang) {
+		return ['coffeescript'].indexOf(lang) === -1;
+	})
+ })
 hljs.initHighlightingOnLoad();
 var codeBlocks = document.querySelectorAll('code');
 for (var i = 0; i < codeBlocks.length; i++) {
