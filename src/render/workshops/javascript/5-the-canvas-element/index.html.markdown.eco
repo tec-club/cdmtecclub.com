@@ -1,0 +1,75 @@
+---
+title: "Javascript: Workshop 5"
+subtitle: "The Canvas Element"
+description: "Learn what the canvas element is and how it can be used to create games"
+date: 2014-11-14
+author: "Alex Wendland"
+
+layout: "post"
+
+workshop: "javascript"
+type: "lesson"
+backgroundImage: "http://designshack.net/wp-content/uploads/prog101-1.jpg"
+
+additional:
+	- name: HTML5 Canvas Tutorial
+	  url: http://www.html5canvastutorials.com/tutorials/html5-canvas-element/
+	- name: MDN Canvas API
+	  url: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+	- name: Diving In, Canvas
+	  url: http://diveintohtml5.info/canvas.html#divingin
+---
+
+We will be covering the HTML5 [canvas][canvas mdn] element today. This element provides a rendering area in which we can draw lines, shapes, colors, images, pixels, text and more. It is an easily accesible interface that handles most of the burden of drawing for us. Furthermore, it is very fast and can easily support 60 FPS games.
+
+### The HTML
+
+The canvas element is a simple HTML element:
+
+	<canvas></canvas>
+
+It does not contain any children and acts as a block level element. Additionally, we will want to specify two attribtues for the canvas element, a `width` and a `height`.
+
+	<canvas width="300" height="300"></canvas>
+
+This attributes are integer values that represent the number of pixels that the canvas is wide and tall.
+
+### Initializing in JS
+
+In our JavaScript we want to create a reference to our canvas element in the DOM. We will use a general `querySelector()` to access it.
+
+	var canvasElem = document.querySelector('canvas');
+
+Next we need to initiliaze a [context][context mdn] in order to use the canvas. As of now, `canvasElem` is little more than a [HTMLElement][htmlelement mdn]. To get access to its drawing abilities we need to request a [context][context mdn] from it.
+
+	var ctx = canvasElem.getContext('2d');
+
+We requested a 2d version for the `ctx` element. Modern browsers support 3d technologies and are capable of driving complex, graphically intense games, but for now we will stay with a basic 2d context.
+
+For future reference we made need to know the width and heighth. We can access these from the `canvasElem`.
+
+    var width = canvasElem.width;
+    var height = canvasElem.height;
+
+### First Shape
+
+Now we can begin to draw our first shape. Let's draw a rectangle that covers the entire canvas. To do this we will make use of the [context.rect(start_x, start_y, width, height)][context rect mdn] method as well as the [context.fill()][context fill mdn] method and `ctx.fillstyle`. The `rect()` method is used to designate which pixels we want to apply the `fillstyle` to, and the `fill()` method triggers the drawing on these pixels.
+
+	ctx.rect(0, 0, width, height);
+	ctx.fillstyle = 'green';
+	ctx.fill();
+
+Now we will draw a smaller rectangle on top of this one. Let's make this rectangle `pink` and have it occupy from `(10,10)` to `(width - 10, height - 10)`.
+
+	ctx.rect(10, 10, width - 10, height - 10);
+	ctx.fillstyle = 'pink';
+	ctx.fill();
+
+### Canvas Oddities
+
+Unlike a normal coordinate system, the canvas's origin is in the top left. Here's a demonstration of it:
+
+
+[canvas mdn]: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+[context mdn]: https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+[htmlelement mdn]: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement
