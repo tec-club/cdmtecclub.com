@@ -90,6 +90,7 @@ var docpadConfig = {
 };
 
 docpadConfig.templateData.helpers = {
+	// Prepend a URL with the site's root url
 	baseUrl: function (url) {
 		if (url instanceof Array) {
 			for (var i = 0; i < url.length; i++) {
@@ -99,6 +100,15 @@ docpadConfig.templateData.helpers = {
 		} else {
 			return url.replace('%baseUrl%', docpadConfig.templateData.site.url);
 		}
+	},
+
+	// Escape a String of HTML into HTML Entities
+	escapeHtmlString: function (str) {
+		return str.replace(/&/g, '&amp;')
+				.replace(/"/g, '&quot;')
+				.replace(/'/g, '&apos;')
+				.replace(/</g, '&lt;')
+				.replace(/>/g, '&gt;');
 	}
 };
 
