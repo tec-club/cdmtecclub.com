@@ -14,7 +14,7 @@
 
 <body ng-app="cdmtecclub" id="home" class="<%= @document.layout if @document.layout %>">
 
-	<section class="navbar"> 
+	<section class="navbar <%= "shadow" if @document.navbarShadow %>"> 
 		<input type="checkbox" id="menu-toggle"/>
 		<label for="menu-toggle" class="menu-toggle-label">&#9776;</label>
 		<header>
