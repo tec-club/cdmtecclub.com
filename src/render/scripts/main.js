@@ -68,4 +68,23 @@ angular
 				}
 			}
 		}
+	}])
+	/* Created by Alex Wendland (me@alexwendland.com), 2014-10-24
+	 *
+	 * Directive for displaying recent GitHub activity
+	 * of a user/organization
+	 */
+	.directive('github', ['$http', function githubDirective($http) {
+		return {
+			scope: {
+				user: '@'
+			},
+			restrict: 'E',
+			template: '<ul><li ng-repeat="event in events">{{event}}</li></ul>',
+			link: function githubDirectiveLink(scope, elem, attrs) {
+				$http.get('https://api.github.com/users/' + scope.user + '/events').then(function githubDirectiveGetEvents(resp) {
+					scope.events = resp.data;
+				});
+			}
+		}
 	}]);
