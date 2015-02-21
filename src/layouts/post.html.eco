@@ -16,6 +16,6 @@ layout: "default"
 
 <main class="body">
 	<h2><%= @document.title %></h2>
-	<small class="date"><%= @document.date %></small>
+	<small class="date" title="<%=@document.date %>"><time datetime="<%=@document.date %>"><%= @helpers.prettyDate(@document.date) %></time></small>
 	<%- @content %>
 </main>
