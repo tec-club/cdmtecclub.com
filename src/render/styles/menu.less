@@ -1,5 +1,4 @@
 // Header/title items
-@desktopNavPadding: 2em;
 .navbar {
     position: fixed;
     top: 0;
@@ -9,12 +8,20 @@
 
     z-index: 9999;
 
-    transition: box-shadow .5s;
+    transform: translateY(0);
+    &.hide {
+        transform: translateY(-@navHeight);
+    }
+
+    transition: transform 0.2s ease-in-out, background 0.4s ease-in-out,
+                box-shadow .5s;
     &.shadow {
         box-shadow: 0 2px 5px rgba(0,0,0,.26);
     }
-
     background-color: @primaryColor;
+    &.fade-top.top {
+        background-color: fadeout(@primaryColor, 100%);
+    }
 
     @media @desktop {
         padding: 0 @desktopNavPadding;

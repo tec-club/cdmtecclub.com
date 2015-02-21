@@ -1,17 +1,29 @@
 ---
 title: "TEC Club"
 subtitle: "Technology, Entrepreneurship, Coding"
-layout: "page"
+layout: "default"
 isPage: true
 isMenu: true
 menuTitle: "Home"
+navbarFadeTop: true
+scripts: ["/scripts/network-anim.js"]
+styles: ["/styles/network-anim.css"]
 ---
 
-<% for post in @getCollection("posts").toJSON(): %>
-    <article class="posts <%= if post.id is @document.id then 'active' else 'inactive' %>">
-        <a href="<%= post.url %>">
-            <h2><%= post.title %></h2>
-        </a>
-        <p><%- post.contentRenderedWithoutLayouts?.substring(0, 300) %>...</p>
-    </article>
-<% end %>	        	<small class="date"><%= @helpers.prettyDate(post.date) %></small>         
+<header>
+	<canvas id="network-anim"></canvas>
+	<h1 class="page-title"><%= @document.title %></h1>
+	<h2 class="page-subtitle"><%= @document.subtitle %></h2>
+</header>
+
+<main class="body">
+	<% for post in @getCollection("posts").toJSON(): %>
+	    <article class="posts <%= if post.id is @document.id then 'active' else 'inactive' %>">
+	        <a href="<%= post.url %>">
+	            <h2><%= post.title %></h2>
+	        	<small class="date"><%= @helpers.prettyDate(post.date) %></small>         
+	        </a>
+	        <p><%- post.contentRenderedWithoutLayouts?.substring(0, 1000) %>...</p>
+	    </article>
+	<% end %>
+</main>
