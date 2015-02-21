@@ -6,7 +6,7 @@ author: "Alex Wendland"
 
 layout: "post"
 type: "post"
-backgroundImage: "bg.png"
+backgroundImage: "res/2014-09-26--code_bg.png"
 backgroundYOffset: "-80px"
 ---
 
