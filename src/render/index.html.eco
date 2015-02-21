@@ -11,8 +11,7 @@ menuTitle: "Home"
     <article class="posts <%= if post.id is @document.id then 'active' else 'inactive' %>">
         <a href="<%= post.url %>">
             <h2><%= post.title %></h2>
-        	<small class="date"><%= post.date %></small>         
         </a>
         <p><%- post.contentRenderedWithoutLayouts?.substring(0, 300) %>...</p>
     </article>
-<% end %>
+<% end %>	        	<small class="date"><%= @helpers.prettyDate(post.date) %></small>         
