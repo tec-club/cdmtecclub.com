@@ -9,7 +9,7 @@ type: "post"
 backgroundImage: "res/2015-02-20--network_blue.png"
 ---
 
-> _This is a guest post from [http://blog.alexwendland.com](). The original post can be found at [Alex Wendland: Particle Network Animations in JS](http://blog.alexwendland.com/2015/particle-network-js-animations/)_
+> _This is a guest post from [http://blog.alexwendland.com](http://blog.alexwendland.com). The original post can be found at [Alex Wendland: Particle Network Animations in JS](http://blog.alexwendland.com/2015/particle-network-js-animations/)_
 
 I just did a minor revamp of the TEC Club homepage in order to include a live, JS generated network of floating dots. Opaque interconnections will pop to life when the dots travel within 100 pixels of each other. On mouse over, the connections will fade away and the dots will grow increase in opacity. It can be quite entertaining to watch. I enjoy playing [this](http://s.codepen.io/awendland/debug/XJExGv?) version in full screen and just watching it.
 
@@ -34,11 +34,11 @@ This evolved into an interactive version and eventually the version that can be 
 
 You can delve into the [CodePens](http://codepen.io) in order to see the JS, CSS and HTML workings of the effect. I currently (2015-02-20) have three projects related to it:
 
-- Initial Mavenlink creation [http://codepen.io/awendland/pen/XJExGv]()
-- Performance testing version [http://codepen.io/awendland/pen/wBmLxN]()
-- Draft 1 TEC Club animation [http://codepen.io/awendland/pen/wBmLRO]()
+- Initial Mavenlink creation [http://codepen.io/awendland/pen/XJExGv](http://codepen.io/awendland/pen/XJExGv)
+- Performance testing version [http://codepen.io/awendland/pen/wBmLxN](http://codepen.io/awendland/pen/wBmLxN)
+- Draft 1 TEC Club animation [http://codepen.io/awendland/pen/wBmLRO](http://codepen.io/awendland/pen/wBmLRO)
 
 The current production code for the animation on the TEC Club website can be found at
 
-- [http://cdmtecclub.com/scripts/network-anim.js]()
-- [http://cdmtecclub.com/styles/network-anim.css]()
+- [http://cdmtecclub.com/scripts/network-anim.js](http://cdmtecclub.com/scripts/network-anim.js)
+- [http://cdmtecclub.com/styles/network-anim.css](http://cdmtecclub.com/styles/network-anim.css)
