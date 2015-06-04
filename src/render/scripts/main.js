@@ -16,6 +16,7 @@ function escapeHtmlString(str) {
  * Initialize highlight.js
  */
 hljs.configure({
+    // Remove coffeescript from autodetected languages
 	languages: hljs.listLanguages().filter(function (lang) {
 		return ['coffeescript'].indexOf(lang) === -1;
 	})
@@ -25,6 +26,59 @@ var codeBlocks = document.querySelectorAll('code');
 for (var i = 0; i < codeBlocks.length; i++) {
 	hljs.highlightBlock(codeBlocks[i]);
 };
+
+/*
+ * Keep recent dates displayed as relative measures
+ */
+ function setupRelativeDates() {
+    function relativeDates() {
+        var timeElems = document.querySelectorAll('time[datetime]');
+        for (var elemIndex = 0; elemIndex < timeElems.length; elemIndex++) {
+            var timeElem = timeElems[elemIndex];
+            var isoString = timeElem.getAttribute('datetime');
+            timeElem.textContent = prettyDate(isoString);
+        }
+    }
+    relativeDates();
+    setInterval(relativeDates, 1000);
+    /*
+     * JavaScript Pretty Date
+     * Copyright (c) 2011 John Resig (ejohn.org)
+     * Licensed under the MIT and GPL licenses.
+     */
+    // Takes an ISO time and returns a string representing how
+    // long ago the date represents.
+    function prettyDate (time) {
+        var date = time instanceof Date ? time : new Date((time || "").replace(/-/g,"/").replace(/[TZ]/g," ")),
+            diff = (((new Date()).getTime() - date.getTime()) / 1000),
+            day_diff = Math.floor(diff / 86400);
+
+        if (diff < 60) {
+            return "just now"
+        }
+        else if (diff < 120) {
+            return "1 minute ago";
+        }
+        else if (diff < 3600) {
+            return Math.floor( diff / 60 ) + " minutes ago";
+        } else if (diff < 7200) {
+            return "1 hour ago";
+        } else if (diff < 86400) {
+            return Math.floor( diff / 3600 ) + " hours ago";
+        } else if (day_diff == 1) {
+            return "Yesterday";
+        } else if (day_diff < 7) {
+            return day_diff + " days ago";
+        } else if (day_diff < 31) {
+            return Math.ceil( day_diff / 7 ) + " weeks ago";
+        } else {
+            var months = [ "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December" ];
+            return months[date.getMonth()] + " " + date.getDate() + ", " + date.getFullYear();
+        }
+    }
+}
+setupRelativeDates();
 
 /* http://cdmtecclub.com angular app
  *
